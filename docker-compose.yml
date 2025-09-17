@@ -1,0 +1,13 @@
+services:
+  donkeycar-sim:
+    build: .
+    container_name: donkeycar-simulator
+    ports:
+      - "9091:9091"
+      - "8887:8887"
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+    # volumes:
+    #   - ./data:/app/mysim/data  # Disabled data saving
+    stdin_open: true
+    tty: true
